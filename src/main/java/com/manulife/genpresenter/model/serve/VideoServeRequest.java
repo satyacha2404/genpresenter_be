@@ -1,18 +1,72 @@
 package com.manulife.genpresenter.model.serve;
 
 public class VideoServeRequest {
+  private String name;
+  private String gender;
+  private String birthDate;
+  private String domisili;
+  private String picture;
+  private String video;
+  private String language;
 
-  private String base64Image;
 
-  public VideoServeRequest() {
+  // Getter Methods
+
+  public String getName() {
+    return name;
   }
 
-  public String getBase64Image() {
-    return base64Image;
+  public String getGender() {
+    return gender;
   }
 
-  public void setBase64Image(String base64Image) {
-    this.base64Image = base64Image;
+  public String getBirthDate() {
+    return birthDate;
   }
 
+  public String getDomisili() {
+    return domisili;
+  }
+
+  public String getPicture() {
+    return picture;
+  }
+
+  public String getVideo() {
+    return video;
+  }
+
+  public String getLanguage() {
+    return language;
+  }
+
+  // Setter Methods
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
+
+  public void setBirthDate(String birthDate) {
+    this.birthDate = birthDate;
+  }
+
+  public void setDomisili(String domisili) {
+    this.domisili = domisili;
+  }
+
+  public void setPicture(String picture) {
+    this.picture = picture;
+  }
+
+  public void setVideo(String video) {
+    this.video = video;
+  }
+
+  public void setLanguage(String language) {
+    this.language = language;
+  }
 }

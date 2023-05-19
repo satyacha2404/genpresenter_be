@@ -19,6 +19,7 @@ public class TalksConsumeResponse {
   private float duration;
   private String started_at;
   private String result_url;
+  private String object;
 
   public TalksConsumeResponse() {
   }
@@ -165,5 +166,13 @@ public class TalksConsumeResponse {
 
   public void setResult_url(String result_url) {
     this.result_url = result_url;
+  }
+
+  public String getObject() {
+    return object;
+  }
+
+  public void setObject(String object) {
+    this.object = object;
   }
 }
