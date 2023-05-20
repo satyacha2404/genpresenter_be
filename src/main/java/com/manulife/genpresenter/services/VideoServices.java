@@ -3,15 +3,11 @@ package com.manulife.genpresenter.services;
 import com.manulife.genpresenter.model.consume.*;
 import com.manulife.genpresenter.model.serve.VideoServeRequest;
 import com.manulife.genpresenter.model.serve.VideoServeResponse;
+import com.manulife.genpresenter.services.consume.ImageConsumeService;
 import com.manulife.genpresenter.services.consume.VideoConsumeService;
 import com.manulife.genpresenter.services.library.ImageHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class VideoServices {
@@ -21,6 +17,9 @@ public class VideoServices {
 
     @Autowired
     private VideoConsumeService videoConsumeService;
+
+    @Autowired
+    private ImageConsumeService imageConsumeService;
 
 //    public VideoServeResponse UploadImage(VideoServeRequest baseImage) {
 //        String url = "https://api.d-id.com/talks/tlk_kKUH5FIyuc51rE4XRqLeR";
@@ -76,12 +75,15 @@ public class VideoServices {
 //    }
 
     public VideoServeResponse generateVideo(VideoServeRequest videoServeRequest) throws InterruptedException {
+        ImageConsumeResponse imageConsumeResponse = new ImageConsumeResponse();
         TalksConsumeResponse talksConsumeResponseGenerate = new TalksConsumeResponse();
         TalksConsumeResponse talksConsumeResponse = new TalksConsumeResponse();
         VideoServeResponse videoServeResponse = new VideoServeResponse();
         boolean completedFlag = false;
 
-        talksConsumeResponseGenerate = videoConsumeService.PostTalk(videoServeRequest);
+        imageConsumeResponse = imageConsumeService.UploadImage(videoServeRequest.getPicture());
+
+        talksConsumeResponseGenerate = videoConsumeService.PostTalk(videoServeRequest, imageConsumeResponse.getUrl());
 
         if (talksConsumeResponseGenerate.getStatus().equals("created")) {
             while (!completedFlag) {
