@@ -87,7 +87,7 @@ public class VideoServices {
 
         if (talksConsumeResponseGenerate.getStatus().equals("created")) {
             while (!completedFlag) {
-                Thread.sleep(5000);
+                Thread.sleep(3000);
                 talksConsumeResponse = videoConsumeService.GetTalk(talksConsumeResponseGenerate.getId());
                 if (talksConsumeResponse.getStatus().equals("done")) {
                     completedFlag = true;

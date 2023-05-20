@@ -18,18 +18,10 @@ public class VideoController extends BaseController {
 
     @PostMapping("/generate-video")
     public DefaultResponse GenerateVideo(@RequestBody VideoServeRequest request) {
-        System.out.println("xx");
+        System.out.println("called generate-video");
 
-//        DefaultResponse defaultResponse;
-        VideoServeResponse videoServeResponse;
-//        ImageConsumeResponse imageConsumeResponse;
-//        String result;
+        VideoServeResponse videoServeResponse = new VideoServeResponse();
         try {
-//            videoServeResponse = videoServices.UploadImage(baseImage);
-//            imageConsumeResponse = videoServices.SubmitImage(baseImage.getBase64Image());
-
-//            System.out.println("controller");
-//            result = videoServices.GetResult();
             videoServeResponse = videoServices.generateVideo(request);
             return this.getSuccessResponse(videoServeResponse);
         } catch (Exception ex) {

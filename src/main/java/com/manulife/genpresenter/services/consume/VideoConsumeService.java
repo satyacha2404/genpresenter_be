@@ -2,6 +2,8 @@ package com.manulife.genpresenter.services.consume;
 
 import com.manulife.genpresenter.model.consume.*;
 import com.manulife.genpresenter.model.serve.VideoServeRequest;
+import com.manulife.genpresenter.services.library.Wording;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -17,6 +19,10 @@ public class VideoConsumeService {
   private HttpHeaders httpHeaders = new HttpHeaders();
   private RestTemplate restTemplate = new RestTemplate();
 
+  @Autowired
+  private Wording wording;
+
+
   public VideoConsumeService() {
     this.httpHeaders.set(HttpHeaders.AUTHORIZATION, "Basic c2F0eWEuY2hhbmRyYS5hbDJAb3V0bG9vay5jb20:EAPs5migc-UKAFy7MGyGW");
   }
@@ -29,7 +35,7 @@ public class VideoConsumeService {
 
     TalksScriptConsumeRequest talksScriptConsumeRequest = new TalksScriptConsumeRequest();
     talksScriptConsumeRequest.setType("text");
-    talksScriptConsumeRequest.setInput("Halo rekan - rekan manulife indonesia. Selamat Datang.");
+    talksScriptConsumeRequest.setInput(wording.getStandardWording(videoServeRequest));
 
     TalksProviderConsumeRequest talksProviderConsumeRequest = new TalksProviderConsumeRequest();
     talksProviderConsumeRequest.setType("microsoft");
