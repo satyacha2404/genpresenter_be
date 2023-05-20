@@ -9,12 +9,22 @@ public class Wording {
   public String getStandardWording(VideoServeRequest videoServeRequest) {
     String wording;
 
-    wording = "Sesuai dengan ketentuan Otoritas Jasa Keuangan, kami akan merekam konfirmasi Anda untuk hal-hal berikut: \n" +
-        "•\tPemegang Polis adalah " + this.getName(videoServeRequest) +
-        "•\tTertanggung adalah [nama Tertanggung]\n" +
-        "•\tTanggal lahir Pemegang Polis \n" +
-        "•\tDomisili Pemegang Polis di [domisili calon pemegang polis sesuai yang ada di tanda tangan proposal] \n";
+    wording = "Selamat [pagi/siang/sore] Bapak/Ibu .\n" +
+        "\n" +
+        "Kami mengucapkan terima kasih kepada Bapak/Ibu karena telah tertarik untuk memiliki perlindungan produk MiSMART INSURANCE SOLUTION atau MiSSION\n" +
+        "\n" +
+        "Selanjutnya, Bapak/Ibu [Sebutkan Nama Calon Pemegang Polis] dapat mempelajari secara lebih jelas syarat dan ketentuan produk MiSSION pada Ringkasan Informasi Produk yang terlampir di Ilustrasi atau Proposal.\n" +
+//        "\n" +
+//        "Apabila pengajuan polis asuransi Bapak/Ibu telah disetujui dan polis telah terbit, maka pemegang polis memiliki hak untuk mempelajari Polis (Free Look Period) dalam waktu 14 hari kalender sejak tanggal polis diterima oleh Pemegang Polis, dimana dalam periode masa mempelajari Polis (Free Look Period) tersebut, Bapak/Ibu diberikan kesempatan mempelajari polis dan menyatakan persetujuan/keberatan dengan Ketentuan Umum dan/atau Ketentuan Khusus Polis. \n" +
+//        "\n" +
+//        "Apabila Bapak/Ibu tidak menyetujui ketentuan Polis, maka Bapak/Ibu harus memberitahukan secara tertulis dan mengembalikan Polis (jika ada) sebelum melewati periode masa mempelajari Polis dan oleh karenanya Polis akan dibatalkan.\n" +
+//        "\n" +
+//        "Dalam periode mempelajari Polis (Free Look Period) tersebut Manulife akan menghubungi Bapak/Ibu melalui nomor telepon [Sebutkan Nomor Telepon Calon Pemegang Polis yang diinput Pada SPAJ] untuk proses welcoming call untuk melakukan konfirmasi bahwa Bapak/Ibu memahami ketentuan Polis.\n" +
+//        "\n" +
+//        "Polis Bapak/Ibu tetap aktif dan tidak batal apabila kami tidak menerima pernyataan keberatan atas ketentuan Polis dari Bapak/Ibu dalam masa mempelajari Polis (Free Look) dan apabila kami telah berhasil melakukan konfirmasi pemahaman Bapak/Ibu akan ketentuan Polis dalam proses welcoming call. Apabila kedua hal tersebut tidak kami terima, maka Polis menjadi batal dan premi pertama yang telah Bapak/Ibu bayarkan akan dikembalikan sesuai dengan ketentuan Polis.\n" +
+        "\n";
 
+    System.out.println(wording);
     return wording;
   }
 

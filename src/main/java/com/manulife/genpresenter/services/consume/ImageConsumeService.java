@@ -23,7 +23,7 @@ public class ImageConsumeService {
 
   //  private String serverUrl = "https://api.d-id.com";
   private String serverUrl = "http://localhost:8000/d-id";
-//  private String apiAuth = "Basic c2F0eWEuY2hhbmRyYS5hbDFAb3V0bG9vay5jb20:Q4Wf7d8C8drR2Ou8CVkgP";
+  private String apiAuth = "Basic c2F0eWEuY2hhbmRyYS5hbDNAb3V0bG9vay5jb20:PesLQAqM02T5EnWqt84t4";
   private HttpHeaders httpHeaders = new HttpHeaders();
   private RestTemplate restTemplate = new RestTemplate();
 
@@ -52,7 +52,7 @@ public class ImageConsumeService {
 
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.MULTIPART_FORM_DATA);
-    headers.add("Authorization", "Basic c2F0eWEuY2hhbmRyYS5hbDJAb3V0bG9vay5jb20:EAPs5migc-UKAFy7MGyGW");
+    headers.add("Authorization", this.apiAuth);
 
     return new HttpEntity<>(body, headers);
   }
