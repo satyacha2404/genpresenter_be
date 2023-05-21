@@ -17,7 +17,7 @@ import java.io.IOException;
 public class ImageConsumeService {
 
   private String serverUrl = "http://localhost:8000/d-id";
-  private String apiAuth = "Basic c2F0eWEuY2hhbmRyYS5hbDNAb3V0bG9vay5jb20:Qhs7TaPkGonTYa5NPEgxQ";
+  private String apiAuth = "Basic c2F0eWFjaGFuZHJhYnVhbmFAZ21haWwuY29t:bC5X9HPKUdscIN2BQoxq5";
   private HttpHeaders httpHeaders = new HttpHeaders();
   private RestTemplate restTemplate = new RestTemplate();
 

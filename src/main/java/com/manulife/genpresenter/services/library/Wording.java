@@ -19,9 +19,9 @@ public class Wording {
     wording = "Selamat " + this.getTimeGreetings() + " " + this.getGreetingGender(videoServeRequest) + " .\n" +
         "\n" +
         "Kami mengucapkan terima kasih kepada " + this.getGreetingGender(videoServeRequest) + " karena telah tertarik untuk memiliki perlindungan produk MiSMART INSURANCE SOLUTION atau MiSSION\n" +
-        "\n" +
-        "Selanjutnya, " + this.getGreetingGender(videoServeRequest) + " " + this.getName(videoServeRequest) + " dapat mempelajari secara lebih jelas syarat dan ketentuan produk MiSSION pada Ringkasan Informasi Produk yang terlampir di Ilustrasi atau Proposal.\n" +
         "\n" ;
+//        "Selanjutnya, " + this.getGreetingGender(videoServeRequest) + " " + this.getName(videoServeRequest) + " dapat mempelajari secara lebih jelas syarat dan ketentuan produk MiSSION pada Ringkasan Informasi Produk yang terlampir di Ilustrasi atau Proposal.\n" +
+//        "\n" ;
 //        "Apabila pengajuan polis asuransi " + this.getGreetingGender(videoServeRequest) + " telah disetujui dan polis telah terbit, maka pemegang polis memiliki hak untuk mempelajari Polis (Free Look Period) dalam waktu 14 hari kalender sejak tanggal polis diterima oleh Pemegang Polis, dimana dalam periode masa mempelajari Polis (Free Look Period) tersebut, " + this.getGreetingGender(videoServeRequest) + " diberikan kesempatan mempelajari polis dan menyatakan persetujuan/keberatan dengan Ketentuan Umum dan/atau Ketentuan Khusus Polis. \n" +
 //        "\n" +
 //        "Apabila Bapak/Ibu tidak menyetujui ketentuan Polis, maka " + this.getGreetingGender(videoServeRequest) + " harus memberitahukan secara tertulis dan mengembalikan Polis (jika ada) sebelum melewati periode masa mempelajari Polis dan oleh karenanya Polis akan dibatalkan.\n" +
