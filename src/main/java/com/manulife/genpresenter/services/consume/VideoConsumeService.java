@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class VideoConsumeService {
 
   private String serverUrl = "http://localhost:8000/d-id";
-  private String apiAuth = "Basic c2F0eWEuY2hhbmRyYS5hbDNAb3V0bG9vay5jb20:PesLQAqM02T5EnWqt84t4";
+  private String apiAuth = "Basic c2F0eWEuY2hhbmRyYS5hbDNAb3V0bG9vay5jb20:Qhs7TaPkGonTYa5NPEgxQ";
   private HttpHeaders httpHeaders = new HttpHeaders();
   private RestTemplate restTemplate = new RestTemplate();
 
@@ -24,10 +24,12 @@ public class VideoConsumeService {
 
 
   public VideoConsumeService() {
-    this.httpHeaders.set(HttpHeaders.AUTHORIZATION, "Basic c2F0eWEuY2hhbmRyYS5hbDJAb3V0bG9vay5jb20:EAPs5migc-UKAFy7MGyGW");
+    this.httpHeaders.set(HttpHeaders.AUTHORIZATION, this.apiAuth);
   }
 
   public TalksConsumeResponse PostTalk(VideoServeRequest videoServeRequest, String urlUploadImage) {
+    System.out.println("PostTalk");
+
     ResponseEntity<TalksConsumeResponse> responseEntity = null;
     String url = this.serverUrl + "/talks";
     TalksConsumeResponse talksConsumeResponse = new TalksConsumeResponse();
@@ -35,11 +37,17 @@ public class VideoConsumeService {
 
     TalksScriptConsumeRequest talksScriptConsumeRequest = new TalksScriptConsumeRequest();
     talksScriptConsumeRequest.setType("text");
+
     talksScriptConsumeRequest.setInput(wording.getStandardWording(videoServeRequest));
 
     TalksProviderConsumeRequest talksProviderConsumeRequest = new TalksProviderConsumeRequest();
     talksProviderConsumeRequest.setType("microsoft");
-    talksProviderConsumeRequest.setVoice_id("id-ID-ArdiNeural");
+
+    if (videoServeRequest.getPresenterGender().equals("L")) {
+      talksProviderConsumeRequest.setVoice_id("id-ID-ArdiNeural");
+    } else {
+      talksProviderConsumeRequest.setVoice_id("id-ID-GadisNeural");
+    }
 
     TalksVoiceConfigConsumeRequest talksVoiceConfigConsumeRequest = new TalksVoiceConfigConsumeRequest();
     talksVoiceConfigConsumeRequest.setStyle("Cheerful");
@@ -48,7 +56,6 @@ public class VideoConsumeService {
     talksScriptConsumeRequest.setProvider(talksProviderConsumeRequest);
 
     talksConsumeRequest.setScript(talksScriptConsumeRequest);
-//    talksConsumeRequest.setSource_url("s3://d-id-images-prod/auth0|645b9c1d0743716e603ff716/img_qzyvbPIIpxez7NcPddKc1/WIN_20230224_10_56_35_Pro.jpg");
     talksConsumeRequest.setSource_url(urlUploadImage);
 
     HttpEntity<TalksConsumeRequest> requestEntity = new HttpEntity<>(talksConsumeRequest, this.httpHeaders);
@@ -61,6 +68,8 @@ public class VideoConsumeService {
   }
 
   public TalksConsumeResponse GetTalk(String videoId) {
+    System.out.println("GetTalk");
+
     TalksConsumeResponse talksConsumeResponse = new TalksConsumeResponse();
     ResponseEntity<TalksConsumeResponse> responseEntity = null;
     String url = this.serverUrl + "/talks/" + videoId;

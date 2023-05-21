@@ -8,7 +8,7 @@ public class VideoServeRequest {
   private String picture;
   private String video;
   private String language;
-
+  private String presenterGender;
 
   // Getter Methods
 
@@ -68,5 +68,13 @@ public class VideoServeRequest {
 
   public void setLanguage(String language) {
     this.language = language;
+  }
+
+  public String getPresenterGender() {
+    return presenterGender;
+  }
+
+  public void setPresenterGender(String presenterGender) {
+    this.presenterGender = presenterGender;
   }
 }
